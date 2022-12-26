@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Web Page</title>
+  <style>
+    /* Add some styling for the page */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Set the background image for the page */
+    #background {
+      background-image: url('images/BackgroundImageV2.png');
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* Style the three smaller images */
+    #image1 {
+      position: absolute;
+      width: 350px;
+      height: 500px;
+    }
+
+    #image2 {
+      position: absolute;
+      width: 360px;
+      height: 390px;
+    }
+
+    #image3 {
+      position: absolute;
+      width: 360px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Add the background image -->
+  <div id="background"></div>
+
+  <!-- Add the two smaller images -->
+  <img id="image1" src="images/Image1.png">
+  <img id="image2" src="images/pram.png">
+  <img id="image3" src="images/pramMan1.png">
+
+  <!-- Add a script to handle keyboard input and move the images -->
+  <script>
+    // Get a reference to the images
+    const image1 = document.getElementById('image1');
+    const image2 = document.getElementById('image2');
+    const image3 = document.getElementById('image3');
+
+    // Set the initial position of the images
+    let image1X = 70;
+    let image1Y = 270;
+    let image2X = 200;
+    let image2Y = 390;
+    let image3X = 510;
+    let image3Y = 270;
+
+    // Update the position of the images
+    image1.style.top = `${image1Y}px`;
+      image1.style.left = `${image1X}px`;
+      image2.style.top = `${image2Y}px`;
+      image2.style.left = `${image2X}px`;
+
+      image3.style.top = `${image3Y}px`;
+      image3.style.left = `${image3X}px`
+
+
+    // Add an event listener for keyboard input
+    document.addEventListener('keydown', (event) => {
+      // Check which key was pressed
+      switch(event.code) {
+        // Move image1 up
+        case 'ArrowUp':
+          image1Y -= 10;
+          break;
+        // Move image1 down
+        case 'ArrowDown':
+          image1Y += 10;
+          break;
+        // Move image1 left
+        case 'ArrowLeft':
+          image1X -= 10;
+          break;
+        // Move image1 right
+        case 'ArrowRight':
+          image1X += 10;
+          break;
+        // Move image2 up
+        case 'KeyW':
+          image2Y -= 10;
+          break;
+        // Move image2 down
+        case 'KeyS':
+          image2Y += 10;
+          break;
+        // Move image2 left
+        case 'KeyA':
+          image2X -= 10;
+          break;
+        // Move image2 right
+        case 'KeyD':
+          image2X += 10;
+          break;
+
+          // Move image3 up
+        case 'KeyI':
+          image3Y -= 10;
+          break;
+        // Move image3 down
+        case 'KeyK':
+          image3Y += 10;
+          break;
+        // Move image3 left
+        case 'KeyJ':
+          image3X -= 10;
+          break;
+        // Move image3 right
+        case 'KeyL':
+          image3X += 10;
+          break;
+      }
+
+      // Update the position of the images
+      image1.style.top = `${image1Y}px`;
+      image1.style.left = `${image1X}px`;
+      image2.style.top = `${image2Y}px`;
+      image2.style.left = `${image2X}px`;
+
+      image3.style.top = `${image3Y}px`;
+      image3.style.left = `${image3X}px`;
+
+
+    });
+  </script>
+</body>
+</html>
